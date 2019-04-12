@@ -1,1 +1,14 @@
-console.log('hello world');
+//hello.js 
+function Hello() { 
+    var name; 
+    this.setName = function(thyName) { 
+        name = thyName; 
+    }; 
+    this.sayHello = function() { 
+        console.log('Hello ' + name); 
+    }; 
+}; 
+module.exports = Hello;
+// exports.world = function() {
+//     console.log('Hello World');
+//   }
