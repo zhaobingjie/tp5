@@ -43,7 +43,52 @@
 // })
 
 //argv 包含了所有Node程序运行时的参数值
-console.log(process.argv);
+// console.log(process.argv);
+// console.log(process.argv.slice(2));//cli:node part2 start           console:['start']
 
-console.log(__dirname);
-console.log(process.cwd());
+//获取目录
+// console.log(__dirname);
+// console.log(process.cwd());
+
+//stream 流
+//使用 stream方式读取大文件更加高效合理,以"\n" 分割读取(每次读取占用内存小),
+// var fs = require('fs');
+// var stream = fs.createReadStream('./public/demo.log');
+// stream.setEncoding('UTF8');
+// var content = '';
+// stream.on('data',function(chunk){
+//     content += chunk;
+// });
+// stream.on('end',function(){
+//     console.log(content);
+// });
+// stream.on('error',function(err){
+//     console.log(err);
+// })
+
+//fs.watch(监事整个目录),fs.watchFile(监事文件)
+// var fs = require('fs');
+// var files  = fs.readdirSync(__dirname+'/public');
+// files.forEach(function(file){
+//     if(/\.txt/.test(file)){
+//         var filename = __dirname+'/public/'+file;
+//         fs.watchFile(filename,function(){
+//             console.log('file: '+ filename +' changed ! ');
+//         });
+//     }
+// });
+// fs.writeFile(__dirname+'/public/watch.txt','cache',function(err){
+//     if(err){
+//         console.log(err);
+//     }else{
+//         console.log('写入成功');
+//     }
+// })
+
+//----------------------------  TCP:page66 --------------------------------
+var http = require('http');
+http.createServer(function(req,res){
+    res.writeHead(200,{"Content-Type":"text/html"});
+    res.write('<h1>Hello World!</h1>');
+    res.end();
+}).listen(8080);
