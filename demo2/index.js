@@ -45,6 +45,7 @@ var server = net.createServer(function(conn){
     //监听tcp连接关闭事件
     conn.on('close',function(){
         count--;
+        delete users[username];
     });
     var msg = '';//每次连接tcp服务都会触发回调,所有msg变量不会被污染
     function getmsg(data){
