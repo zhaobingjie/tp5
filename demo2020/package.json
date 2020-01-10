@@ -1,0 +1,16 @@
+{
+  "name": "demo2020",
+  "version": "1.0.0",
+  "description": "zbj's node demo",
+  "main": "server.js",
+  "scripts": {
+    "test": "console.log('num run success!')",
+    "dev" : "node server.js",
+    "auto" : "nodemon server.js"
+  },
+  "author": "zbj",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
